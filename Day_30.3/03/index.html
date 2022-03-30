@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Asyn</title>
+</head>
+<body>
+ 
+</body>
+<script>
+ let asynFunc = async function() {
+  return "Hello";
+ }
+ console.log(asynFunc());
+ console.log(asynFunc.then(()=>{
+  console.log('Thành công');
+ }))
+</script>
+</html>

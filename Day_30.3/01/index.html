@@ -4,12 +4,35 @@
  <meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
+ <title>Calback Function</title>
 </head>
 <body>
  
 </body>
 <script>
- 
+ //dung callback
+ let greet = (name,callback) => {
+  console.log(name);
+  callback();
+ }
+ let callMe = () => {
+  console.log('Hi!');
+ }
+ console.log(greet('Tam', callMe));
+ //dung timeout()
+ let chao = () => {
+  console.log('Xin chao');
+ }
+ let sayHello = () =>{
+  console.log('Hello word!');
+ }
+ function callback () {
+ chao();
+ setTimeout(()=>{
+  console.log(sayHello());
+  }, 1000);
+  console.log('My name is Tam');  
+ }
+ console.log(callback());
 </script>
 </html>
