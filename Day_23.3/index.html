@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+  <input id="user" type="text">
+  <input type="submit" value="Submit" onclick="validateUser()">
+  <p id="Status"></p>
+</body>
+<script>
+ function validateUser() {
+  let userRegex = /^[a-z0-9]{6,}$/;
+  let Validate = userRegex.test(document.getElementById("user").value);
+  console.log(Validate);
+  let status ="";
+  if (Validate) {
+    status ="User validate";
+  }
+  else status ="User invalidate";
+  document.getElementById("Status").innerHTML = status;
+ }
+
+
+</script>
+</html>

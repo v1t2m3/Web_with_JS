@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ 
+</body>
+<script>
+  class Shape {
+    constructor (color, isfilled = null) {
+     this.color = color;
+     this.isfilled = isfilled ==null?false:true;
+    }
+    toString() {
+     return "A shape with color of " + this.color + " and " + (this.isfilled?"filled":"not filled");
+    }
+  }
+  let A = new Shape('Green', true);
+  console.log(A.toString());
+  class Circlde extends Shape {
+   constructor(color, isfilled, radius=1) {
+    super(color, isfilled);
+    this.radius = radius;
+   }
+   getArea() {
+    return this.radius*this.radius*3.14;
+   }
+   getPerimeter () {
+    return this.radius*2*3.14;
+   }
+   toString() {
+    return "A Circle with radius = " + this.radius + " Area = " + this.getArea() + " Perimeter =" + this.getPerimeter() + " , which is a subclass of " +A.toString();
+   }
+  }
+  let B = new Circlde("Red", true, 5);
+  console.log( B.toString());
+</script>
+</html>
