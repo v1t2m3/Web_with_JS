@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="index.css" />
+        <title>Ajax</title>
+    </head>
+    <body>
+        <input type="text" id="searchimg" />
+        <button type="submit" onclick="searchImg()">Search</button>
+        <div class="img_giffy" id="Image_giffy"></div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    <script>
+        var src_img = "";
+        var x_Text = "";
+        function searchImg() {
+            var search_word =
+                "http://api.giphy.com/v1/gifs/search?q=" +
+                document.getElementById("searchimg").value +
+                "&api_key=lwqNJthuWcTCVnUQbl2LYPYmIyQEO0I7";
+            console.log(search_word);
+            axios
+                .get(search_word)
+                .then(function (response) {
+                    console.log(response.data.data[0].images.original.url);
+                    src_img = response.data.data[0].images.original.url;
+                    // document.getElementById("img").src = src_img;
+                    x_Text =
+                        "<img src=" +
+                        src_img +
+                        ' alt="" width="400" height="400" />' +
+                        "<br>" +
+                        x_Text;
+                    document.getElementById("Image_giffy").innerHTML = x_Text;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+            src_img = "";
+        }
+    </script>
+</html>

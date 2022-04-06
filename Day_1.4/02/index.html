@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wheather</title>
+    </head>
+    <body>
+        <input type="text" id="searchcity" />
+        <button type="submit" onclick="searchcity()">Search</button>
+        <div class="detail_wheather" id="detailWheather">
+            <p></p>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    <script>
+        var nameCity = "";
+        var tempCity = "";
+        var humidity = "";
+        var x_Text = "";
+        function searchcity() {
+            var search_word =
+                "https://api.openweathermap.org/data/2.5/weather?q=" +
+                document.getElementById("searchcity").value +
+                "&appid=c632409f050a567d27ea54f5ec2a3e51";
+            console.log(search_word);
+            axios
+                .get(search_word)
+                .then(function (response) {
+                    console.log(response.data);
+                    nameCity = response.data.name;
+                    tempCity = (response.data.main.temp - 273.1).toFixed(1);
+                    humidity = response.data.main.humidity;
+                    // document.getElementById("img").src = src_img;
+                    x_Text =
+                        "<p> Thanh pho: " +
+                        nameCity +
+                        "</p>" +
+                        "<p> Nhiet do: " +
+                        tempCity +
+                        " do C </p>" +
+                        "<p> Do am: " +
+                        humidity +
+                        "</p> <br> " +
+                        x_Text;
+                    document.getElementById("detailWheather").innerHTML =
+                        x_Text;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+            src_img = "";
+        }
+    </script>
+</html>
