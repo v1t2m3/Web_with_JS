@@ -1,0 +1,12 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import HomePage from "./component/Home";
+import IncreaseButton from "./component/lifeCycle";
+import Hello from "./component/unmountComponent";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import CheckKey from "./component/checkKey";
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<HomePage />);
