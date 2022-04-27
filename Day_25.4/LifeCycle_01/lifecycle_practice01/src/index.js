@@ -7,6 +7,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import CheckKey from "./component/checkKey";
+import TodoApp from "./component/TodoApp";
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<HomePage />);
+root.render(<TodoApp />);
