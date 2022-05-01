@@ -6,6 +6,8 @@ export default function HomePage2() {
     const [login, setLogin] = useState(false);
     const fnc_setlogin = () => {
         setLogin(false);
+        setPassword("");
+        setUser("");
     };
     console.log(user, password, login);
     if (!login) {

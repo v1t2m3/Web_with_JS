@@ -1,26 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import { createRoot } from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<App />);
-
-// import React from "react";
-// import ReactDOM from "react-dom";
-// import "./index.css";
-// import App from "./App";
-// import reportWebVitals from "./reportWebVitals";
-
-// ReactDOM.render(
-//     <React.StrictMode>
-//         <App />
-//     </React.StrictMode>,
-//     document.getElementById("root")
-// );
-
-// // If you want to start measuring performance in your app, pass a function
-// // to log results (for example: reportWebVitals(console.log))
-// // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
+root.render(
+    <div className="container py-5">
+        <div className="card">
+            <div className="card--header" />
+            <img
+                className="avatar"
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                alt="avatar"
+            />
+            <div className="card--body">
+                <div>
+                    <p className="text-header">Ruma Khan</p>
+                    <p className="text-sub">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry
+                    </p>
+                    <button className="btn btn-primary">FOLLOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
+);
