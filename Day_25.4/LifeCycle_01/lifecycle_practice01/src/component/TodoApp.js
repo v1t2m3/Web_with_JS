@@ -40,19 +40,23 @@ export default class TodoApp extends Component {
                     </div>
                 </div>
                 <div className="table-todolist my-5">
-                    <table className="table table-striped table-hover">
-                        <tr style={{ textAlign: "center", color: "#6FDFDF" }}>
-                            <th>No.</th>
-                            <th>Items</th>
-                            <th>Status</th>
-                        </tr>
-                        {this.state.todoList.map((item, index) => (
-                            <tr className="text-center">
-                                <td>{index + 1}</td>
-                                <td>{item}</td>
-                                <td>Not yet</td>
+                    <table className="table table-success table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Items</th>
+                                <th>Status</th>
                             </tr>
-                        ))}
+                        </thead>
+                        <tbody>
+                            {this.state.todoList.map((item, index) => (
+                                <tr>
+                                    <td>{index + 1}</td>
+                                    <td>{item}</td>
+                                    <td>Not yet</td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             </div>
