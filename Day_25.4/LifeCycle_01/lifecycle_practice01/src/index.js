@@ -11,6 +11,7 @@ import TodoApp from "./component/TodoApp";
 import Count from "./component/useEffect";
 import Increase from "./component/useState";
 import DemoCustomHook from "./component/showtime";
+import HomePage2 from "./component/Home2";
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<DemoCustomHook />);
+root.render(<HomePage2 />);
